@@ -11,11 +11,9 @@ app.use((c, next) => log(c, next))
 const BOT = Deno.env.get("BOT")
 
 
-const o = {
-    ch: "-1002623552220",
-    user: "1175308172",
-    g: "-4637741828"
-}
+app.get("/", async (c) => {
+  return c.text("this is it working effectively thanks")
+})
 
 app.post("/bot", async (c) => {
   const { message, mode, id } = await c.req.parseBody()
